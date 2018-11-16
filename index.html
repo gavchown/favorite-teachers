@@ -9,7 +9,7 @@
     <link href="style.css" rel="stylesheet">
 
     <script id="teacher-template" type="text/x-handlebars-template">
-        <li class="teacher" data-id="{{teacher_id}}" data-subjects="{{subjects}}">
+        <li class="teacher" data-id="{{teacher_id}}" data-subjects="{{subjects}}" data-sexs="{{sex}}">
             <img src="images/{{image}}" alt="{{name}}">
             <h4>{{name}}</h4>
         </li>
@@ -33,6 +33,10 @@
                 <select id="subject-filter">
                     <option value="">--Filter by subject--</option>
                 </select>
+                <h3>Sex</h3>
+                <select id="sex-filter">
+                    <option value="">--Filter by sex--</option>
+                </select>
             </aside>
             <section>
                 <h3>Teachers</h3>
@@ -47,6 +51,7 @@
     <script src="js/teachers.js"></script> 
     <script src="js/teacher-constructor.js"></script>
     <script src="js/subject-filter.js"></script>
+    <script src="js/sex-filter.js"></script>
     <script src="js/search.js"></script>
 </body>
 </html>

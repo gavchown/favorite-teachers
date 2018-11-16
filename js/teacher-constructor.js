@@ -1,22 +1,27 @@
 'use strict';
 
-var REPLACE1 = [];
+var teacher_list = [];
 
-var REPLACE2 = function(teacher){
+var Teacher = function(teacher){
+    this.image = teacher.image;
+    this.name = teacher.name;
+    this.subjects = teacher.subjects;
+    this.sex = teacher.sex;
+    this.teacher_id = teacher.teacher_id;
     
 };
 
-REPLACE2.prototype.toHtml = function(){
+Teacher.prototype.toHtml = function(){
     var source = $('#teacher-template').text();
     var template = Handlebars.compile(source);
     return template(this);
 };
 
-teachers.forEach(function(REPLACE3){
-    REPLACE1.push(new REPLACE2(REPLACE3));
+teachers.forEach(function(teacher){
+    teacher_list.push(new Teacher(teacher));
 });
 
 
-REPLACE1.forEach(function(REPLACE3){
-    $('#teacher-listings').append(REPLACE3.toHtml());
+teacher_list.forEach(function(teacher){
+    $('#teacher-listings').append(teacher.toHtml());
 });
